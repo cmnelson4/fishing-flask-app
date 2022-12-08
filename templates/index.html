@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fishing Game</title>
+</head>
+<body>
+    <h1>Fishing Game</h1>
+
+    <p>Fish caught: {{ fish_caught }}</p>
+    <p>Bait: {{ bait }}</p>
+    <p>Rod: {{ rod }}</p>
+
+    <form action="/cast">
+        <button type="submit">Cast line</button>
+    </form>
+
+    <form action="/upgrade_bait">
+        <button type="submit">Upgrade bait</button>
+    </form>
+
+    <form action="/upgrade_rod">
+        <button type="submit">Upgrade rod</button>
+    </form>
+</body>
+</html>
