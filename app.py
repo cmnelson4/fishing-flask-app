@@ -9,7 +9,9 @@ rod = "basic"
 
 @app.route("/")
 def index():
-    return render_template("index.html", fish_caught=fish_caught, bait=bait, rod=rod)
+    return render_template(
+        "./templates/index.html", fish_caught=fish_caught, bait=bait, rod=rod
+    )
 
 
 @app.route("/upgrade_bait")
@@ -19,7 +21,9 @@ def upgrade_bait():
         bait = "fly"
     elif bait == "fly":
         bait = "lure"
-    return render_template("index.html", fish_caught=fish_caught, bait=bait, rod=rod)
+    return render_template(
+        "./templates/index.html", fish_caught=fish_caught, bait=bait, rod=rod
+    )
 
 
 @app.route("/upgrade_rod")
@@ -29,14 +33,18 @@ def upgrade_rod():
         rod = "medium"
     elif rod == "medium":
         rod = "advanced"
-    return render_template("index.html", fish_caught=fish_caught, bait=bait, rod=rod)
+    return render_template(
+        "./templates/index.html", fish_caught=fish_caught, bait=bait, rod=rod
+    )
 
 
 @app.route("/cast")
 def cast():
     global fish_caught
     fish_caught += 1
-    return render_template("index.html", fish_caught=fish_caught, bait=bait, rod=rod)
+    return render_template(
+        "./templates/index.html", fish_caught=fish_caught, bait=bait, rod=rod
+    )
 
 
 if __name__ == "__main__":
