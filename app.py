@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from flaskrun import flaskrun
 
 app = Flask(__name__)
 
@@ -48,4 +49,4 @@ def cast():
 
 
 if __name__ == "__main__":
-    app.run()
+    flaskrun(app)
