@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Fishing Game</title>
-</head>
-<body>
-    <h1>Fishing Game</h1>
+<h1>Fishing Game</h1>
 
-    <p>Fish caught: {{ fish_caught }}</p>
-    <p>Bait: {{ bait }}</p>
-    <p>Rod: {{ rod }}</p>
+<p>Money: {{ money }}</p>
+<p>Fishing skill: {{ skill }}</p>
 
-    <form action="/cast">
-        <button type="submit">Cast line</button>
-    </form>
+<h2>Fish</h2>
 
-    <form action="/upgrade_bait">
-        <button type="submit">Upgrade bait</button>
-    </form>
+<ul>
+    {% for f in fish %}
+    <li>{{ f.name }} (value: {{ f.value }})</li>
+    {% endfor %}
+</ul>
 
-    <form action="/upgrade_rod">
-        <button type="submit">Upgrade rod</button>
-    </form>
-</body>
-</html>
+<form action="/fish">
+    <button type="submit">Cast line</button>
+</form>
+
+<h2>Upgrades</h2>
+
+<ul>
+    {% for u in upgrades %}
+    <li>{{ u.name }} (price: {{ u.price }}, increase: {{ u.increase }}) <a href="/buy/{{ u.name }}">Buy</a></li>
+    {% endfor %}
+</ul>
